@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#14100F">
+<title>Contact — Les Twins</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="https://pub-5da1ae0fa8304945bebd02fdba49b359.r2.dev/logotwins1.png" alt="Les Twins"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li class="nav-dd">
+      <a href="menu.html">Carte <span class="caret">&#9662;</span></a>
+      <ul class="dd-menu"><li><a href="entrees-froides.html">Entrées Froides</a></li><li><a href="entrees-chaudes.html">Entrées Chaudes</a></li><li><a href="viandes.html">Viandes</a></li><li><a href="poissons.html">Poissons</a></li><li><a href="desserts.html">Desserts</a></li><li><a href="desserts.html">Desserts</a></li></ul>
+    </li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="hamburger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+<div class="mob-nav" id="mobNav">
+  <a href="index.html">Accueil</a>
+  <a href="menu.html">Menu</a>
+  <div class="mob-sec-label">— La Carte —</div>
+  <a href="entrees-froides.html">Entrées Froides</a><a href="entrees-chaudes.html">Entrées Chaudes</a><a href="viandes.html">Viandes</a><a href="poissons.html">Poissons</a><a href="desserts.html">Desserts</a>
+  <a href="contact.html">Contact</a>
+</div>
+<section class="sec" style="padding-top:130px">
+  <div class="sec-head">
+    <p class="sh-eyebrow">Nous Contacter</p>
+    <h1 class="sh-title">Réserver une <em>Table</em></h1>
+  </div>
+  <div class="contact-grid">
+    <div class="ct-list">
+      <div class="ct-item rv"><div class="ct-icon"><i class="fas fa-phone"></i></div><div><div class="ct-label">Téléphone</div><div class="ct-value"><a href="tel:+213770250260">+213 770 250 260</a></div></div></div>
+      <div class="ct-item rv"><div class="ct-icon"><i class="fab fa-whatsapp"></i></div><div><div class="ct-label">Réservations</div><div class="ct-value"><a href="https://wa.me/213555474087" target="_blank">+213 555 474 087</a></div></div></div>
+      <div class="ct-item rv"><div class="ct-icon"><i class="fas fa-location-dot"></i></div><div><div class="ct-label">Adresse</div><div class="ct-value">Esplanade EGTC Hamma, à proximité du Sofitel Hotel Alger</div></div></div>
+      <div class="ct-item rv"><div class="ct-icon"><i class="fab fa-instagram"></i></div><div><div class="ct-label">Instagram</div><div class="ct-value"><a href="https://www.instagram.com/lestwins.restaurant/?hl=en" target="_blank">@lestwins.restaurant</a></div></div></div>
+      <div class="ct-item rv"><div class="ct-icon"><i class="fab fa-snapchat"></i></div><div><div class="ct-label">Snapchat</div><div class="ct-value">Lestwinsjg</div></div></div>
+    </div>
+    <div class="ct-actions">
+      <button class="btn-p" style="justify-content:center" onclick="openReservation()"><i class="fab fa-whatsapp"></i> Réserver via WhatsApp</button>
+      <a href="tel:+213770250260" class="btn-o" style="justify-content:center"><i class="fas fa-phone"></i> Appeler le restaurant</a>
+      <a href="https://www.instagram.com/lestwins.restaurant/?hl=en" target="_blank" class="btn-o" style="justify-content:center"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+  </div>
+</section>
+<section class="sec" style="padding-top:20px">
+  <div class="map-wrap"><iframe src="https://maps.google.com/maps?q=Q32F%2BC5%2BBelouizdad&output=embed&z=16&hl=fr" loading="lazy" title="Les Twins"></iframe></div>
+</section>
+<button class="cpl-float" onclick="openComplaint()"><i class="fas fa-triangle-exclamation"></i> Doléance / Réclamation</button>
+<div class="cpl-modal">
+  <div class="rm-bg" onclick="closeComplaint()"></div>
+  <div class="rm-form">
+    <button class="rm-close" onclick="closeComplaint()">&times;</button>
+    <h3>Doléance / <em>Réclamation</em></h3>
+    <p class="rm-sub">Votre message nous sera transmis directement sur WhatsApp</p>
+    <div class="f-group"><div class="f-label">Nom</div><input class="f-input" id="c-name" placeholder="Votre nom"></div>
+    <div class="f-group"><div class="f-label">Téléphone (optionnel)</div><input class="f-input" id="c-phone" type="tel" placeholder="0X XX XX XX XX"></div>
+    <div class="f-group"><div class="f-label">Votre message</div><input class="f-input" id="c-msg" placeholder="Décrivez votre doléance ou réclamation"></div>
+    <button class="rm-submit" onclick="submitComplaint()"><i class="fab fa-whatsapp" style="font-size:1.05rem"></i> Envoyer</button>
+  </div>
+</div>
+<button class="res-float" onclick="openReservation()"><i class="fab fa-whatsapp"></i> Réserver</button>
+<div class="res-modal">
+  <div class="rm-bg" onclick="closeReservation()"></div>
+  <div class="rm-form">
+    <button class="rm-close" onclick="closeReservation()">&times;</button>
+    <h3>Réserver une <em>table</em></h3>
+    <p class="rm-sub">Nous vous répondrons directement sur WhatsApp</p>
+    <div class="res-notice"><i class="fas fa-clock"></i><span>Merci de bien vouloir respecter l'horaire de votre réservation. Passé un délai de <strong style="color:var(--gold)">30 minutes</strong>, la table ne pourra plus être garantie.</span></div>
+    <div class="f-group"><div class="f-label">Nom</div><input class="f-input" id="r-name" placeholder="Votre nom"></div>
+    <div class="f-group"><div class="f-label">Téléphone</div><input class="f-input" id="r-phone" type="tel" placeholder="0X XX XX XX XX"></div>
+    <div class="f-row">
+      <div class="f-group"><div class="f-label">Date</div><input class="f-input" id="r-date" type="date"></div>
+      <div class="f-group"><div class="f-label">Heure (20h00 – 22h30)</div><select class="f-input" id="r-time"><option value="">Choisir…</option><option value="20:00">20:00</option><option value="20:15">20:15</option><option value="20:30">20:30</option><option value="20:45">20:45</option><option value="21:00">21:00</option><option value="21:15">21:15</option><option value="21:30">21:30</option><option value="21:45">21:45</option><option value="22:00">22:00</option><option value="22:15">22:15</option><option value="22:30">22:30</option></select></div>
+    </div>
+    <div class="f-group"><div class="f-label">Nombre de couverts</div><input class="f-input" id="r-covers" type="number" min="1" placeholder="2"></div>
+    <div class="f-group"><div class="f-label">Notes (optionnel)</div><input class="f-input" id="r-notes" placeholder="Allergie, occasion spéciale..."></div>
+    <button class="rm-submit" onclick="submitReservation()"><i class="fab fa-whatsapp" style="font-size:1.05rem"></i> Envoyer la demande</button>
+  </div>
+</div>
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <img src="https://pub-5da1ae0fa8304945bebd02fdba49b359.r2.dev/logotwins1.png" alt="Les Twins">
+      <div class="fb-name">Les Twins</div>
+      <p>Restaurant gastronomique — Esplanade EGTC Hamma, à proximité du Sofitel Hotel Alger.</p>
+      <div class="ft-soc">
+        <a href="https://www.instagram.com/lestwins.restaurant/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/213555474087" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+213770250260"><i class="fas fa-phone"></i></a>
+      </div>
+    </div>
+    <div><div class="fc-hd">Menu</div><ul class="ft-links"><li><a href="entrees-froides.html">Entrées Froides</a></li><li><a href="entrees-chaudes.html">Entrées Chaudes</a></li><li><a href="viandes.html">Viandes</a></li><li><a href="poissons.html">Poissons</a></li><li><a href="desserts.html">Desserts</a></li><li><a href="desserts.html">Desserts</a></li><li><a href="menu.html">Toute la carte →</a></li></ul></div>
+    <div><div class="fc-hd">Contact</div><ul class="ft-links">
+      <li><i class="fas fa-phone" style="color:var(--gold);margin-right:6px;font-size:.7rem"></i><a href="tel:+213770250260">+213 770 250 260</a></li>
+      <li><i class="fas fa-location-dot" style="color:var(--gold);margin-right:6px;font-size:.7rem"></i>Esplanade EGTC Hamma, à proximité du Sofitel Hotel Alger</li>
+      <li><i class="fab fa-instagram" style="color:var(--gold);margin-right:6px;font-size:.7rem"></i><a href="https://www.instagram.com/lestwins.restaurant/?hl=en" target="_blank">@lestwins.restaurant</a></li>
+    </ul></div>
+  </div>
+  <div class="ft-base"><p>© 2025 <span>Les Twins</span> — Restaurant Gastronomique</p><p>Réalisé avec <span>♥</span></p></div>
+</footer>
+<script src="script.js"></script></body></html>
