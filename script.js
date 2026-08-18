@@ -28,7 +28,11 @@ function initSectionBar(){
 }
 
 /* ── Reservation modal ── */
-function openReservation(){document.querySelector('.res-modal')?.classList.add('show');}
+function openReservation(){
+  document.querySelector('.res-modal')?.classList.add('show');
+  const t=document.getElementById('r-time');
+  if(t){t.min='20:00';t.max='22:30';}
+}
 function closeReservation(){document.querySelector('.res-modal')?.classList.remove('show');}
 function submitReservation(){
   const name=document.getElementById('r-name')?.value?.trim();
@@ -38,6 +42,7 @@ function submitReservation(){
   const covers=document.getElementById('r-covers')?.value;
   const notes=document.getElementById('r-notes')?.value?.trim();
   if(!name||!phone||!date||!time||!covers){alert('Veuillez remplir tous les champs obligatoires.');return;}
+  if(time<'20:00'||time>'22:30'){alert('Les réservations sont possibles uniquement entre 20h00 et 22h30.');return;}
   let msg=`✨ *Réservation — Les Twins*\n\n`;
   msg+=`👤 Nom: *${name}*\n📱 Tél: *${phone}*\n`;
   msg+=`📅 Date: *${date}*\n🕐 Heure: *${time}*\n👥 Couverts: *${covers}*\n`;
